@@ -7,7 +7,7 @@
 #
 
 wifiInterface=$(networksetup -listallhardwareports | /usr/bin/awk '/Wi-Fi|AirPort/ {getline; print $NF}')
-wifiNetwork="ViewpointGuest"
+wifiNetwork="SSID"
 activeWiFiNetwork=$(networksetup -getairportnetwork $wifiInterface | cut -c 24-)
 searchResult=$(networksetup -listpreferredwirelessnetworks $wifiInterface | grep "$wifiNetwork")
 
